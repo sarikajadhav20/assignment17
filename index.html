@@ -18,6 +18,8 @@
             border:1px solid black;
             box-shadow:0 0 10px rgb(46, 45, 45);
             border-right:none;
+            padding-left:20px;
+            background-color:pink;
         }
         .part2{
             width:60%;
@@ -25,26 +27,84 @@
             border:1px solid black;
             box-shadow:0 0 10px rgb(46, 45, 45);
             border-left:dashed;
+            padding-left:20px;
+            background-color:pink;
+
         }
         .ticket-no{
             font-family:Cambria;
             padding-left:10px;
         }
         .logo{
-            margin:5px;   }
+            margin:5px;  
+            padding:0; 
+        }
+        .event-title{
+            font-size:25px;
+            text-align: center;
+        }    
+        .event-img{
+            height:120px;
+            width:400px;
+            padding:10px;
+        }
+        /*Mobile*/
+        @media(max-width:600px){
+            .container{
+                flex-direction:column;
+                height:auto;
+            }
+            .part1{
+                width:450px;
+                border-right:1px solid;
+            }
+            .part2{
+                width:450px;
+                border-top:dashed;
+                border-left:1px solid;
+            }
+            .event-title{
+            font-size:16px;
+        }    
+        }
+        /*Tablet*/
+        @media(min-width:601px) and (max-width:800px){
+            .container{
+                flex-direction:column;
+                text-align:center;
+                height:auto;
+                width:100%;
+            }
+            .part1{
+                width:500px;
+                border-right:1px solid;
+            }
+            .part2{
+                width:500px;
+                border-top:dashed;
+                border-left:1px solid;
+                height: 650px;;
+            }
+            .event-title{
+               font-size:22px;
+        }    
+        } 
     </style>
 </head>
 <body>
     <div class="container">
         <div class="part1">
-            <span class="ticket-no">Ticket No.:89765</span>
             <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAA4CAMAAABnuDDbAAAAvVBMVEX////GkI+yZWOOAADz6Of//fz9+vnjysnfvrv79fP47urGiof17OvbuLbXpJTatLLw4d3csKHv2dPm0M/WqqjYr6z19/va2ee+d3Kzrsng3ur36eTSnI3jv7Pmx72Oh7Hu1Mqjnr7AvtXm5/HOzeCblrnq5eqCe6jQnpu6a16vVEi/gH2Vj7W8cWjPkn/IiHm+cVq+dmO1YkyrRTTUx9OsTTF5caLKuci2YluvUDvAnKa6hInIkITg0danOjOu6H/xAAAEt0lEQVRIiZVW6XqjOBBse0FCnELcYAGWscPEJk5mZ72ency+/2NNczgmhzO79YPPpim6ulUtAfAhbDugNLDZx9H3IE7kGdy2NZtTJwr+A4M7BmyaRDVVrLKNirUo+k02zeOQJE22VtkWtiqrIMtj6nxGQSXxGrbNetPsErZLmhjuqlzpBr/FsFsSZ4etyn+Gafrlft9a1iLYqINKcm7coISg4krFXtc9+K5/7KtnTuolqFPp0YcUVK2yhJ4f3ZXvHh9bOt4XqdHcJZnevqcQD9YZxIsvru/7T48Go/QScqzkkG309/JCSDZZ3h1R1denshBw5YDWNZu4sekbikeSQw7Lles+PsmC6aQIh0dE0V9Zt8syMF4vlE1jtU72ru8+fBVQ6wTcJ+TwQvCCEySlar0G73UaODTKeXL91VeuS0agdI8UJB9QIoIoA1XMjaQFOUr701/5jwJIiWmkdCkwkyBYybkA6xsuw7x32ICTsh5c9y8BTHCdMFdir9lQADH7q75XJxVo1z4bcKrIvfSPpa7XWI1eSIk+mnOg/XvTzCoK7HydhFIeXSZBiJ4TdOeuDciMw1p1iq9u9UBt1Hn1XTKJnD7PPsTHnXQ/48BeqZi/iHMgU7vuyQcdahClDmkfsjm3uz48ccJvaJQXM0RwOAXfJRRFYRJRQzjYs4/zveH4sqSB4CD+iXO4WJXRuNp6AeO1qCWra0hRrcFxvlGQEHVdoxsYIz+qUxxOHCHiHbRMyLL2H5hf41B4hFIWUKY5xriutRDFjySBywoNXV+k6bnrvpz3Xbqk4ASMAo0MCJbWFcNKTpx+clv2Ui53wB5c0mpgzOwy59iOEzoWiifCHZjYYnx6YYcaWOTKWXoOnbTpw9p5ARBXlv16lKkNzAhooFFmXSk8At2OxiEaqVoIZek/oDghxRKAMhLYsOzTmEUP8IbNZxRrh/Yo6FiWRQ0gfcGWHPfekC77iDnKMwdTGHQSO2SydPOhFOjrEk0H0XKx2EdQ+lI+D69mZi8Th+KilA9y2UridBW4Sv3NYT8YNkMWFaAXTjBrWx/qLynwuih9txaSTZzieaiBaoxjuN/+rxxH7xOFXJgmGkVKMnF4OXCCko0enO8i+jBLluSscE1TFhdt5gorLMPnWthDB2bSMNHQjXMNzNe5/8KBuj5+fzw++2wJb9IAjEPL7tEKgKkmDuaYwqn9pppBMgrfbO1UE2BKMXJwk5penP58ee8cEYnvsu1uyftpGzkmsHpoTvftoCb7vwYurKoyaC+upIYJBFeXLNqmqbKYf3SytiguPjW2teBTHrMAbWH9bPJDBuLtDj/J06G5WyvFor0VGm1rhGifHR6tVT4/JV6Dcoi36pStoRm/D3Q4Zbh9xhDePFDx2GaAR2rVVJc7zbbB6WjJTQrCwBmPk+SFEyPjkyQTnDDQZ5mN3zN4ENAwve/CyIvaxfnfvWcYzuffL9rYnma4Jnkz/nI+LSeE+LRdV3ebKmuq7amqDofDOtdvNXpIg05TSdMoyJJNk6kmxz9ZDje+Qga0huMY7+AZ7Sd9OP9xA5+IsxYfw7r9NRbc7E94KwChrd0Av5XIvlUN4oOvqgFkeRvv5vp/4hd6m2ocBEaRawAAAABJRU5ErkJggg==">
+            <span class="ticket-no">Ticket No.:89765</span>
             <p class="event-title">Event:Annual Day</p>
+            <img src="C:\Users\Sarikaj\Downloads\day.png" class="event-img">
         </div>
         <div class="part2">
+            <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAA4CAMAAABnuDDbAAAAvVBMVEX////GkI+yZWOOAADz6Of//fz9+vnjysnfvrv79fP47urGiof17OvbuLbXpJTatLLw4d3csKHv2dPm0M/WqqjYr6z19/va2ee+d3Kzrsng3ur36eTSnI3jv7Pmx72Oh7Hu1Mqjnr7AvtXm5/HOzeCblrnq5eqCe6jQnpu6a16vVEi/gH2Vj7W8cWjPkn/IiHm+cVq+dmO1YkyrRTTUx9OsTTF5caLKuci2YluvUDvAnKa6hInIkITg0danOjOu6H/xAAAEt0lEQVRIiZVW6XqjOBBse0FCnELcYAGWscPEJk5mZ72ency+/2NNczgmhzO79YPPpim6ulUtAfAhbDugNLDZx9H3IE7kGdy2NZtTJwr+A4M7BmyaRDVVrLKNirUo+k02zeOQJE22VtkWtiqrIMtj6nxGQSXxGrbNetPsErZLmhjuqlzpBr/FsFsSZ4etyn+Gafrlft9a1iLYqINKcm7coISg4krFXtc9+K5/7KtnTuolqFPp0YcUVK2yhJ4f3ZXvHh9bOt4XqdHcJZnevqcQD9YZxIsvru/7T48Go/QScqzkkG309/JCSDZZ3h1R1denshBw5YDWNZu4sekbikeSQw7Lles+PsmC6aQIh0dE0V9Zt8syMF4vlE1jtU72ru8+fBVQ6wTcJ+TwQvCCEySlar0G73UaODTKeXL91VeuS0agdI8UJB9QIoIoA1XMjaQFOUr701/5jwJIiWmkdCkwkyBYybkA6xsuw7x32ICTsh5c9y8BTHCdMFdir9lQADH7q75XJxVo1z4bcKrIvfSPpa7XWI1eSIk+mnOg/XvTzCoK7HydhFIeXSZBiJ4TdOeuDciMw1p1iq9u9UBt1Hn1XTKJnD7PPsTHnXQ/48BeqZi/iHMgU7vuyQcdahClDmkfsjm3uz48ccJvaJQXM0RwOAXfJRRFYRJRQzjYs4/zveH4sqSB4CD+iXO4WJXRuNp6AeO1qCWra0hRrcFxvlGQEHVdoxsYIz+qUxxOHCHiHbRMyLL2H5hf41B4hFIWUKY5xriutRDFjySBywoNXV+k6bnrvpz3Xbqk4ASMAo0MCJbWFcNKTpx+clv2Ui53wB5c0mpgzOwy59iOEzoWiifCHZjYYnx6YYcaWOTKWXoOnbTpw9p5ARBXlv16lKkNzAhooFFmXSk8At2OxiEaqVoIZek/oDghxRKAMhLYsOzTmEUP8IbNZxRrh/Yo6FiWRQ0gfcGWHPfekC77iDnKMwdTGHQSO2SydPOhFOjrEk0H0XKx2EdQ+lI+D69mZi8Th+KilA9y2UridBW4Sv3NYT8YNkMWFaAXTjBrWx/qLynwuih9txaSTZzieaiBaoxjuN/+rxxH7xOFXJgmGkVKMnF4OXCCko0enO8i+jBLluSscE1TFhdt5gorLMPnWthDB2bSMNHQjXMNzNe5/8KBuj5+fzw++2wJb9IAjEPL7tEKgKkmDuaYwqn9pppBMgrfbO1UE2BKMXJwk5penP58ee8cEYnvsu1uyftpGzkmsHpoTvftoCb7vwYurKoyaC+upIYJBFeXLNqmqbKYf3SytiguPjW2teBTHrMAbWH9bPJDBuLtDj/J06G5WyvFor0VGm1rhGifHR6tVT4/JV6Dcoi36pStoRm/D3Q4Zbh9xhDePFDx2GaAR2rVVJc7zbbB6WjJTQrCwBmPk+SFEyPjkyQTnDDQZ5mN3zN4ENAwve/CyIvaxfnfvWcYzuffL9rYnma4Jnkz/nI+LSeE+LRdV3ebKmuq7amqDofDOtdvNXpIg05TSdMoyJJNk6kmxz9ZDje+Qga0huMY7+AZ7Sd9OP9xA5+IsxYfw7r9NRbc7E94KwChrd0Av5XIvlUN4oOvqgFkeRvv5vp/4hd6m2ocBEaRawAAAABJRU5ErkJggg==">
             <span class="ticket-no">Ticket No.:89765</span>
-            <img  class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAA4CAMAAABnuDDbAAAAvVBMVEX////GkI+yZWOOAADz6Of//fz9+vnjysnfvrv79fP47urGiof17OvbuLbXpJTatLLw4d3csKHv2dPm0M/WqqjYr6z19/va2ee+d3Kzrsng3ur36eTSnI3jv7Pmx72Oh7Hu1Mqjnr7AvtXm5/HOzeCblrnq5eqCe6jQnpu6a16vVEi/gH2Vj7W8cWjPkn/IiHm+cVq+dmO1YkyrRTTUx9OsTTF5caLKuci2YluvUDvAnKa6hInIkITg0danOjOu6H/xAAAEt0lEQVRIiZVW6XqjOBBse0FCnELcYAGWscPEJk5mZ72ency+/2NNczgmhzO79YPPpim6ulUtAfAhbDugNLDZx9H3IE7kGdy2NZtTJwr+A4M7BmyaRDVVrLKNirUo+k02zeOQJE22VtkWtiqrIMtj6nxGQSXxGrbNetPsErZLmhjuqlzpBr/FsFsSZ4etyn+Gafrlft9a1iLYqINKcm7coISg4krFXtc9+K5/7KtnTuolqFPp0YcUVK2yhJ4f3ZXvHh9bOt4XqdHcJZnevqcQD9YZxIsvru/7T48Go/QScqzkkG309/JCSDZZ3h1R1denshBw5YDWNZu4sekbikeSQw7Lles+PsmC6aQIh0dE0V9Zt8syMF4vlE1jtU72ru8+fBVQ6wTcJ+TwQvCCEySlar0G73UaODTKeXL91VeuS0agdI8UJB9QIoIoA1XMjaQFOUr701/5jwJIiWmkdCkwkyBYybkA6xsuw7x32ICTsh5c9y8BTHCdMFdir9lQADH7q75XJxVo1z4bcKrIvfSPpa7XWI1eSIk+mnOg/XvTzCoK7HydhFIeXSZBiJ4TdOeuDciMw1p1iq9u9UBt1Hn1XTKJnD7PPsTHnXQ/48BeqZi/iHMgU7vuyQcdahClDmkfsjm3uz48ccJvaJQXM0RwOAXfJRRFYRJRQzjYs4/zveH4sqSB4CD+iXO4WJXRuNp6AeO1qCWra0hRrcFxvlGQEHVdoxsYIz+qUxxOHCHiHbRMyLL2H5hf41B4hFIWUKY5xriutRDFjySBywoNXV+k6bnrvpz3Xbqk4ASMAo0MCJbWFcNKTpx+clv2Ui53wB5c0mpgzOwy59iOEzoWiifCHZjYYnx6YYcaWOTKWXoOnbTpw9p5ARBXlv16lKkNzAhooFFmXSk8At2OxiEaqVoIZek/oDghxRKAMhLYsOzTmEUP8IbNZxRrh/Yo6FiWRQ0gfcGWHPfekC77iDnKMwdTGHQSO2SydPOhFOjrEk0H0XKx2EdQ+lI+D69mZi8Th+KilA9y2UridBW4Sv3NYT8YNkMWFaAXTjBrWx/qLynwuih9txaSTZzieaiBaoxjuN/+rxxH7xOFXJgmGkVKMnF4OXCCko0enO8i+jBLluSscE1TFhdt5gorLMPnWthDB2bSMNHQjXMNzNe5/8KBuj5+fzw++2wJb9IAjEPL7tEKgKkmDuaYwqn9pppBMgrfbO1UE2BKMXJwk5penP58ee8cEYnvsu1uyftpGzkmsHpoTvftoCb7vwYurKoyaC+upIYJBFeXLNqmqbKYf3SytiguPjW2teBTHrMAbWH9bPJDBuLtDj/J06G5WyvFor0VGm1rhGifHR6tVT4/JV6Dcoi36pStoRm/D3Q4Zbh9xhDePFDx2GaAR2rVVJc7zbbB6WjJTQrCwBmPk+SFEyPjkyQTnDDQZ5mN3zN4ENAwve/CyIvaxfnfvWcYzuffL9rYnma4Jnkz/nI+LSeE+LRdV3ebKmuq7amqDofDOtdvNXpIg05TSdMoyJJNk6kmxz9ZDje+Qga0huMY7+AZ7Sd9OP9xA5+IsxYfw7r9NRbc7E94KwChrd0Av5XIvlUN4oOvqgFkeRvv5vp/4hd6m2ocBEaRawAAAABJRU5ErkJggg==">
-            <p class="event-title">Event:Annual Day</p>
+           <p class="event-title">Event:Annual Day</p>
+           <span>18 DEC| 8 PM</span>
+           <img src="C:\Users\Sarikaj\Downloads\day.png" class="event-img">
         </div>
     </div>
 </body>
